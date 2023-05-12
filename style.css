@@ -1,0 +1,124 @@
+.wrapper {
+  width: 1200px;
+  margin: auto;
+  font-size: 15px;
+}
+header {
+  height: 80px;
+  width: 1200px;
+  background-color: #3f024f !important;;
+  padding: 10px 20px;
+  color: white;
+    
+   
+}
+nav, section {
+  float: left;
+  height: 500px;
+}
+nav {
+  width: 245px;
+  margin-right: 5px;
+   background-color: #0b3c5d !important;  
+   text-align: center;
+
+}
+section {
+  width: 950px;
+   background-color: #d9d9d9 !important;
+   color: #000!important;
+}
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  
+}
+header,
+nav,
+section,footer{
+  border: 3px solid rgba(255,255,255,0.8);
+  margin-bottom: 3px;
+  border-radius: 3px;
+  padding:10px 10px 10px;
+  font-family: "Segoe UI",Arial,sans-serif;
+
+
+}
+
+footer{
+  height: 80px;
+  clear: both;
+   background-color: cae4db!important;
+   color: #000!important;
+}
+/*style the link */
+
+
+/* unvisited link */
+a {
+  
+  color: white;
+    text-decoration: none;
+    font-size: 100%;
+     /*border-style: outset;*/
+     padding: 5px 10px;
+     text-align: center;
+     display: inline-block ;
+     cursor:pointer
+}
+
+/* visited link */
+a:visited {
+  
+  
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+  /*text-decoration: underline;
+   */
+   font-size: 110%;
+}
+
+/* selected link */
+a:active {
+  color: white;
+   
+}
+
+/* style for dropdown*/
+
+.dropdown {
+            display: inline-block; 
+            position: relative;
+}
+.dropdown-content {
+                   display: none;
+                   position: absolute;
+                   min-width: 160px; 
+}
+.dropdown:hover .dropdown-content {
+                                    display: block;
+}
+
+.dropdown-content a {     
+                      display: block;
+                      padding: 4px;
+                      color: #A9A9DA;
+                      font-size: 15px;
+                      background-color:white;
+                       
+}
+.dropdown-content a:hover {
+   text-decoration: underline;
+   color: black;
+   font-size: 16px;
+
+}
