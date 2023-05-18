@@ -146,6 +146,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>forgot your password? please contact with admin.</p>
+            <a href="index.php">back to home</a>
+
         </form>
     </div>
 </body>

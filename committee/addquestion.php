@@ -116,7 +116,7 @@ else{
   <style>
    
   </style>
- </head><body>
+ </head><body style="margin-top:100px;">
      <form  method="POST" enctype="multipart/form-data">
            <div class="container border">
                     <P>  Add  <b> <?php echo $_SESSION["coursename"]?></b> questions for students  </P>

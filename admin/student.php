@@ -45,7 +45,7 @@
                 <tr>
                     <th>Srno</th>
                     <th>Id</th>
-                    <th>Uid</th>
+                    <!-- <th>Uid</th> -->
                    
                      <th>F_name</th>
                     <th>L_name</th>  
@@ -56,45 +56,96 @@
 
             <tbody>           
       <?php 
-
-
-      // $sql= "SELECT * from  students";
-      $sql = "SELECT * from students, studentaccount WHERE students.Id = studentaccount.ID ORDER BY students.f_name ASC";
-   $result=$conn->query($sql);
+//       $sql = "SELECT * from students, studentaccount WHERE students.Id = studentaccount.ID ORDER BY students.f_name ASC";
+//    $result=$conn->query($sql);
      $sn=1;
-    if($result){
-    while($row = $result->fetch_assoc()){
+//     if($result){
+//     while($row = $result->fetch_assoc()){
           
-       $id=$row['Id']; 
-       $uid=$row['UID'];
-        $f_name=  $row['f_name']; 
-         $l_name=  $row['l_name']; 
-       // $password=$row['password']; 
+//        $id=$row['Id']; 
+//        $uid=$row['UID'];
+//         $f_name=  $row['f_name']; 
+//          $l_name=  $row['l_name']; 
         
-         $status=$row['status']; 
+//          $status=$row['status']; 
        
          
 
-      echo'<tr>
+//       echo'<tr>
     
-        <td>'. $sn++.'</td>
-        <td>'.$id.'</td>
-        <td>'.$uid.'</td>
-        <td>'.$f_name.'</td>
-        <td>'.$l_name.'</td>
-        <td>'.$status.'</td>
+//         <td>'. $sn++.'</td>
+//         <td>'.$id.'</td>
+//         <td>'.$uid.'</td>
+//         <td>'.$f_name.'</td>
+//         <td>'.$l_name.'</td>
+//         <td>'.$status.'</td>
 
-        <td>
-        <button class="btn btn-primary btn-md center-block" ><a href="activate student.php?  activateid='.$id.'" class="text-light">Activate</a></button>
-        <button class="btn btn-danger btn-md center-block"><a href=" activate student.php? deactivateid='.$id.'" class="text-light">Deactivate</a></button>
+//         <td>
+//         <button class="btn btn-primary btn-md center-block" ><a href="activate student.php?  activateid='.$id.'" class="text-light">Activate</a></button>
+//         <button class="btn btn-danger btn-md center-block"><a href=" activate student.php? deactivateid='.$id.'" class="text-light">Deactivate</a></button>
 
-        </td>
+//         </td>
         
         
-    </tr>';
+//     </tr>';
 
-  }
+//   }
+// }
+?>
+<?php
+
+
+// Check if search form has been submitted
+if (isset($_GET['search'])) {
+    // Sanitize user input
+    $search_id = mysqli_real_escape_string($conn, $_GET['search']);
+
+    // Construct SQL query
+    $sql = "SELECT * FROM students WHERE id = '$search_id'";
+} else {
+    // Construct SQL query
+    $sql = "SELECT * FROM students";
 }
+
+// Execute SQL query
+$result = $conn->query($sql);
+
+// Display search form
+echo '<form method="get">';
+echo '<input type="text" name="search" placeholder="Search by ID">';
+echo '<input type="submit" value="Search">';
+echo '</form>';
+
+// Display search results
+if ($result->num_rows > 0) {
+    // echo '<table>';
+    // echo '<tr><th>ID</th><th>F Name</th<th>L Name</th></tr>';
+    
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr>';
+        echo '<td>' . $sn++ . '</td>';
+
+        echo '<td>' . $row['Id'] . '</td>';
+        echo '<td>' . $row['f_name'] . '</td>';
+        echo '<td>' . $row['l_name'] . '</td>';
+        echo '<td>' . $row['status'] . '</td>';
+        
+                // <button class="btn btn-danger btn-md center-block"><a href=" activate student.php? deactivateid='.$id.'" class="text-light">Deactivate</a></button>
+        
+                // </td>
+                // <button class="btn btn-primary btn-md center-block" ><a href="activate student.php?  activateid='.$id.'" class="text-light">Activate</a></button>
+                // <button class="btn btn-primary btn-md center-block" ><a href="activate student.php?  activateid='.$id.'" class="text-light">Activate</a></button>
+                echo '<td>'. '<button class="btn btn-primary btn-md center-block me-2"> <a href="activate student.php? activateid='.$row['Id'].'" class="text-light">Activate</a></button>'.
+                '<button class="btn btn-danger btn-md center-block"> <a href="activate student.php? deactivateid='.$row['Id'].'" class="text-light">Deactivate</a></button>'.'</td>';
+        echo '</tr>';
+    }
+    echo '</table>';
+} else {
+    echo 'No results found.';
+}
+
+// Close database connection
+$conn->close();
 ?>
    
 </tbody>

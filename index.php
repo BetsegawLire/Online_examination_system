@@ -11,62 +11,72 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 </body>
-<!-- <div class="wrapper">
-  <header><img src="hulogoo.png"  style="width:60px;height:50px;float: left;" >
-    HRU online college entry examination and placement system   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a  href="#"> Home</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a  href="#">News</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a  href="#"> Contact us</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
-          <div class="dropdown">
-            <a  href="#" class="dropdown-btn">Login</a> 
-              <div class="dropdown-content">
-              
-              <a href="login admin.php">admin</a>
-              <a href="login student.php">student</a>
-              <a href="login committee.php">exam committee</a>
-              <a href="login directorate.php">freshman directorate</a>
-               </div>
-          </div>
-  </header>
-  <nav>
-        <a href="#"> Home</a><br><br>
-        <a href="#"> News</a><br><br>
-        <a href="#"> Contact us</a><br><br>
-    <div class="dropdown">
-        <a href="#" class="dropdown-btn">Login</a>
-          <div class="dropdown-content">
-            <a href="login admin.php">admin</a>
-              <a href="login student.php">student</a>
-              <a href="login committee.php">exam committee</a>
-              <a href="login directorate.php">freshman directorate</a>
-        </div>
-    </div>
-  </nav>
-  <section>this is section 
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+    <img src="hulogoo.png" width="50" height="60" alt="">
 
-  </section>
-  <footer>this is footer
-  </footer>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Log In
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="login admin.php">Admin</a></li>
+    <li><a class="dropdown-item" href="login student.php">Student</a></li>
+    <li><a class="dropdown-item" href="login committee.php">committee</a></li>
+    <li><a class="dropdown-item" href="login directorate.php">Freshman</a></li>
+    <li><a class="dropdown-item" href="login registral.php">Registral</a></li>
+    <li><a class="dropdown-item" href="login committeadmin.php">Committe Admin</a></li>
+
+
+
+  </ul>
 </div>
- -->
+        </li>
+        <li class="nav-item">
+        <a href="" class="nav-link" style="color: white;">Home</a>
+
+        </li>
+        <li class="nav-item">
+        <a href="" class="nav-link" style="color: white;">News</a>
+
+        </li>
+        <li class="nav-item">
+        <a href="" class="nav-link" style="color: white;">Contact Us</a>
+
+        </li>
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
 <!-- Navbar -->
-<nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <!-- Container wrapper -->
+<!-- <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        Container wrapper
         <div class="container-fluid">
-          <!-- Toggle button -->
+          Toggle button
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
             aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
   
-          <!-- Brand -->
+          Brand
           <a class="navbar-brand" href="#">
             <img src="hulogoo.png" width="50" height="60" alt="">
             <span>HRU online college entry examination and placement system</span>
           </a>
   
   
-          <!-- Right links -->
+          Right links
           <ul class="navbar-nav ms-auto d-flex flex-row text-white me-2">
           
             <li class="nav-item unnesecary-links">
@@ -98,8 +108,8 @@
             </li>
           </ul>
         </div>
-        <!-- Container wrapper -->
-      </nav>
+        Container wrapper
+      </nav> -->
       <!-- Navbar -->
 
       <!-- body start -->

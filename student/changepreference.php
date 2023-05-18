@@ -4,7 +4,7 @@ include("connect.php");
 
 
 
-   if(isset($_POST['submit'])) {
+   if(isset($_POST['btn'])) {
 
   $choice_1 = $_POST['choice_1'];
 $choice_2 = $_POST['choice_2'];
@@ -13,24 +13,29 @@ $choice_4 = $_POST['choice_4'];
 $choice_5 = $_POST['choice_5'];
 
       $id=$_SESSION['id'];
-      $q="UPDATE preference set first_choice='$choice_1', second_choice='$choice_2', third_choice='$choice_3', forth_choice='$choice_4', fifth_choice='$choice_5' where stud_id=$id";
-      $r = $conn->query($q);
-      if($r){
-         ?>
-        <script>
-        alert('you changed your preference');
-        window.location='preference.php';
-      </script>
-    <?php
-
+      $q="UPDATE preference set first_choice='$choice_1', second_choice='$choice_2', third_choice='$choice_3', forth_choice='$choice_4', fifth_choice='$choice_5'";
+      if ($conn->query($q) === TRUE) {
+        echo "Record updated successfully";
       } else {
-        ?>
-        <script>
-        alert('unable to change your preference');
-        window.location='preference.php';
-      </script>
-      <?php
-      } 
+        echo "Error updating record: " . $conn->error;
+      }
+    //   $r = $conn->query($q);
+    //   if($r){
+    //      ?>
+    //     <script>
+    //     alert('you changed your preference');
+    //     window.location='preference.php';
+    //   </script>
+    // <?php
+
+    //   } else {
+    //     ?>
+    //     <script>
+    //     alert('unable to change your preference');
+    //     window.location='preference.php';
+    //   </script>
+    //   <?php
+    //   } 
 }
 ?>
 
@@ -143,7 +148,7 @@ $choice_5 = $_POST['choice_5'];
 
    </form>
    <div class="from-group mt-3">
-  <button type="submit" name="submit" class="btn btn-primary">change preference</button>
+  <button type="submit" name="btn" class="btn btn-primary">change preference</button>
   </div>
     </div>
   </body>

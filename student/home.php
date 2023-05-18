@@ -1,11 +1,12 @@
 <?php
 
+include("header.php");
  
 // Initialize the session
-session_start();
+// session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(!isset($_SESSION["loggedinstudent"]) || $_SESSION["loggedinstudent"] !== true){
     header("location: login student.php");
     exit;
 }
@@ -45,96 +46,70 @@ $result=$conn->query($sql);
         <title></title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
         <!-- MetisMenu CSS -->
-        <link href="css/metisMenu.min.css" rel="stylesheet">
+        <!-- <link href="css/metisMenu.min.css" rel="stylesheet"> -->
 
         <!-- DataTables CSS -->
-        <link href="css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+        <!-- <link href="css/dataTables/dataTables.bootstrap.css" rel="stylesheet"> -->
 
         <!-- DataTables Responsive CSS -->
-        <link href="css/dataTables/dataTables.responsive.css" rel="stylesheet">
+        <!-- <link href="css/dataTables/dataTables.responsive.css" rel="stylesheet"> -->
 
         <!-- Custom CSS -->
-        <link href="css/startmin.css" rel="stylesheet">
+        <!-- <link href="css/startmin.css" rel="stylesheet"> -->
 
         <!-- Custom Fonts -->
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 
 
-<form  method="POST"  action="profile1.php" enctype="multipart/form-data">
+<html >
+<body>
+  <div style="margin-bottom:200px;">
+  <?php
+// Connect to database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "final";
 
-           <div id="page-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h1 class="page-header">Dashboard</h1>
-                        </div>
-                        
-                    </div>
-                   
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="col-xs-3">
-                                            <i class="fa fa-user fa-5x"></i>
-                                        </div>
-                                        <div class="col-xs-9 text-right">
-                                            <div class="huge"><?php echo $row['id1'];?></div>
-                                            <div>Total Students</div>
-                                        </div>
-                                    </div>
-                                </div>
-                               
-                                   
-                               
-                            </div>
-                        </div>
-                            </div>
-                                </div>
-                                
-        </div>
-                        </div>
-                        
-                            </div>
-                        </div>
-                 </form>         
-                                        </div>
-                                        <!-- /.col-lg-6 (nested) -->
-                                    </div>
-                                    <!-- /.row (nested) -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                            <!-- /.panel -->
-                        </div>
-                        <!-- /.col-lg-12 -->
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.container-fluid -->
-            </div>
-            <!-- /#page-wrapper -->
-         
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
 
+// Retrieve news details from database
+$sql = "SELECT * FROM news";
+$result = mysqli_query($conn, $sql);
 
-</html>
-<?php
-//include("footer.php");
+// Display news details on webpage
+while ($row = mysqli_fetch_assoc($result)) {
+  echo "<div style='margin-bottom:100px;'></div>";
+  echo "<div class='card m-5'><div class='card-header text-center'><h2>" . $row['title'] . "</h2></div>";
+  echo "<div class='card-body text-center'><p>" . $row['description'] . "</p>";
+  echo "<img src='../directorate/uploads/" . $row['image'] . "'></div></div>";
+}
+
+// Close the database connection
+mysqli_close($conn);
 ?>
- 
+  </div>
+   
+
+
+   
+   
         <script src="js/jquery.min.js"></script>
 
         
         <script src="js/bootstrap.min.js"></script>
-
+        
         
         <script src="js/metisMenu.min.js"></script>
-
+        
         
         <script src="js/dataTables/jquery.dataTables.min.js"></script>
         <script src="js/dataTables/dataTables.bootstrap.min.js"></script>
@@ -142,14 +117,17 @@ $result=$conn->query($sql);
         
         <script src="js/startmin.js"></script>
         <script src="js/jquery.min.js"></script>
-
-       
+        
+        
         <script src="js/bootstrap.min.js"></script>
 
         
         <script src="js/metisMenu.min.js"></script>
-
+        
         
         <script src="js/startmin.js"></script>
+        
 
-
+        
+      </body>
+        </html>

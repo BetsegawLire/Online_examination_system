@@ -9,7 +9,54 @@ include("header.php");
 ?>
 <?php
 
+if(isset($_POST['submit'])){
 
+    $medicine = $_POST['medicine'];
+    $engineering = $_POST['engineering'];
+    $pharmacy = $_POST['pharmacy'];
+    $veternary = $_POST['veternary'];
+    $other = $_POST['other'];
+            //  $id=$_SESSION['id'];
+
+            $values = array(
+                $medicine,$engineering,$pharmacy,$veternary,$other
+              );
+              $id=1;
+              foreach ($values as $row) {
+                $sql = "update college set intake=($row) where C_id=$id";
+              
+                if (mysqli_query($conn, $sql)) {
+                //   echo "intake inserted successfully";
+                  $id++;
+                } else {
+                  echo "Error inserting record: " . mysqli_error($conn);
+                }
+              }
+        
+      }
+
+      if(isset($_POST['btn'])){
+
+        $law = $_POST['law'];
+        $other = $_POST['other'];
+                //  $id=$_SESSION['id'];
+    
+                $values = array(
+                    $law,$other
+                  );
+                  $id=1;
+                  foreach ($values as $row) {
+                    $sql = "update social_college set intake=($row) where C_id=$id";
+                  
+                    if (mysqli_query($conn, $sql)) {
+                    //   echo "intake inserted successfully";
+                      $id++;
+                    } else {
+                      echo "Error inserting record: " . mysqli_error($conn);
+                    }
+                  }
+            
+          }
      
    
 
@@ -26,7 +73,7 @@ include("header.php");
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"> 
     </head>
-    <body>
+    <body style="margin-top:100px;">
    <div class="container">
 
       <div class="row justify-content">
@@ -51,7 +98,7 @@ include("header.php");
 
                    <div class="form-group  mb-3">
                         <label>enter for pharmacy </label>
-                       <input type="number" name="instruction" class="form-control" > 
+                       <input type="number" name="pharmacy" class="form-control" > 
                     </div>
 
                    <div class="form-group  mb-3">
@@ -92,6 +139,10 @@ include("header.php");
                         <label>enter for law </label>
                        <input type="number" name="law" class="form-control" > 
                     </div>
+                    <div class="form-group  mb-3">
+                        <label>enter for other social science </label>
+                       <input type="number" name="other" class="form-control" > 
+                    </div>
                 
                     </div>
                         <div class="form-group mb-3">
@@ -107,6 +158,8 @@ include("header.php");
          </div>
 
      </div>
+
+     
  </div>
  </div>    
 </body>

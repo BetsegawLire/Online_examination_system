@@ -95,7 +95,7 @@ if(isset($_POST['btn']))
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"> 
     </head>
-    <body>
+    <body style="margin-top:100px;">
    <div class="container">
 
       <div class="row justify-content-center">

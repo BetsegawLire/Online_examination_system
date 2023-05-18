@@ -3,7 +3,7 @@
 session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(!isset($_SESSION["loggedinstudent"]) || $_SESSION["loggedinstudent"] !== true){
     header("location: reset_ student.php");
     exit;
 }
@@ -52,14 +52,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE adminacc SET password = ? WHERE id = ?";
+        $sql = "UPDATE studentaccount SET password = ? WHERE ID = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("si", $param_password, $param_id);
             
             // Set parameters
-            $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            // $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $param_password = md5($new_password);
+
             $param_id = $_SESSION["id"];
             
             // Attempt to execute the prepared statement
@@ -116,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="welcome.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="page student.php">Cancel</a>
             </div>
         </form>
     </div>    

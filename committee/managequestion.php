@@ -124,9 +124,9 @@ $coursename=$_SESSION["coursename"];
 
 
  </div>
-<div class="container my-5">
+<!-- <div class="container my-5">
   <button class="btn btn-primary my-5"><a href="getoldquestion.php" class="text-light">get old question </a></button>
-</div>
+</div> -->
 </body>
 </html>
 

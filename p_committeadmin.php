@@ -3,8 +3,8 @@
 session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedinadmin"]) || $_SESSION["loggedinadmin"] !== true){
-    header("location: login.php");
+if(!isset($_SESSION["loggedincommitteadmin"]) || $_SESSION["loggedincommitteadmin"] !== true){
+    header("location: login committeadmin.php");
     exit;
 }
  
@@ -52,21 +52,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE adminacc SET password = ? WHERE id = ?";
+        $sql = "UPDATE committeadmin SET password = ? WHERE id = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("si", $param_password, $param_id);
             
             // Set parameters
-            $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            // $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $param_password = md5($new_password);
             $param_id = $_SESSION["id"];
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: login admin.php");
+                header("location:login committeadmin.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -116,7 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="page admin.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="page committeadmin.php">Cancel</a>
             </div>
         </form>
     </div>    

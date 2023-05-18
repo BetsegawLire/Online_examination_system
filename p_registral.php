@@ -3,8 +3,8 @@
 session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
-if(!isset($_SESSION["loggedinadmin"]) || $_SESSION["loggedinadmin"] !== true){
-    header("location: login.php");
+if(!isset($_SESSION["loggedinregistral"]) || $_SESSION["loggedinregistral"] !== true){
+    header("location: login registral.php");
     exit;
 }
  
@@ -52,21 +52,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_password_err) && empty($confirm_password_err)){
         // Prepare an update statement
-        $sql = "UPDATE adminacc SET password = ? WHERE id = ?";
+        $sql = "UPDATE registralacc SET password = ? WHERE username = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("si", $param_password, $param_id);
+            $stmt->bind_param("si", $param_password, $param_username);
             
             // Set parameters
-            $param_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $param_id = $_SESSION["id"];
+            // $param_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $param_password = md5($new_password);
+            $param_username = $_SESSION["username"];
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: login admin.php");
+                header("location:login registral.php");
                 exit();
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -116,7 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
-                <a class="btn btn-link ml-2" href="page admin.php">Cancel</a>
+                <a class="btn btn-link ml-2" href="page registral.php">Cancel</a>
             </div>
         </form>
     </div>    

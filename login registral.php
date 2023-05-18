@@ -76,6 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         if($password == $hashed_password){
                             // Password is correct, so start a new session
                             session_start();
+                            $_SESSION["username"] = $username;
                             
                             // Store data in session variables
                             $_SESSION["loggedinregistral"] = true;
