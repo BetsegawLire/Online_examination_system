@@ -30,6 +30,29 @@ include("connect.php");
     $row=$result->fetch_assoc();
   ?>
 
+<?php
+if(isset($_POST['next'])){
+//redirection to selection page
+if($_SESSION['branch']!=='social'){
+          $q = "select *from preference where stud_id='$id' order by id desc";
+         $result =$conn->query($q);
+         if($result->num_rows<1){
+           header("location: naturalprefer.php");
+         }
+         else{
+            header("location:changepreference.php");
+
+         }
+       }
+
+ else if($_SESSION['branch']!=='natural'){
+header("location:socialprefer.php");
+
+ }
+}
+
+?>
+
   <?php
 // to get coc result 
  
@@ -82,7 +105,7 @@ include("connect.php");
 
     <title>preference!</title>
   </head>
-  <body>
+  <body style="margin-top: 100px;">
     
 
 <div class="container" style="margin-top:200px;">
@@ -121,28 +144,7 @@ include("connect.php");
 
 
 
-<?php
-if(isset($_POST['next'])){
-//redirection to selection page
-if($_SESSION['branch']!=='social'){
-          $q = "select *from preference where stud_id='$id' order by id desc";
-         $result =$conn->query($q);
-         if($result->num_rows<1){
-           header("location:naturalprefer.php");
-         }
-         else{
-            header("location:changepreference.php");
 
-         }
-       }
-
- else if($_SESSION['branch']!=='natural'){
-header("location:socialprefer.php");
-
- }
-}
-
-?>
 
 
   </body>

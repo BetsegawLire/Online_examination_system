@@ -63,8 +63,13 @@ include("connect.php");
                 $sql="SELECT c.C_name FROM college c INNER JOIN placement p ON p.s_id = $id && c.C_id = p.c_id";
                 $result = $conn->query($sql);
                 
-                $college = $result->fetch_assoc();
-                echo '<h2>'.$college["C_name"].'</h2>';
+                if($result->num_rows > 0){
+                  $college = $result->fetch_assoc();
+
+                  echo '<h2>'.$college["C_name"].'</h2>';
+                }else {
+                  echo "<h2> UnAssigned </h2>";
+                }
                 } else {
                   $sql="SELECT c.C_name FROM social_college c INNER JOIN social_placement p ON p.s_id = $id && c.C_id = p.c_id";
                 $result = $conn->query($sql);

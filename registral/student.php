@@ -44,10 +44,12 @@
                 <tr>
                     <th>Srno</th>
                     <th>Id</th>
-                    <!-- <th>Uid</th> -->
                    
                      <th>F_name</th>
                     <th>L_name</th>  
+                    <th>Uid</th>
+                    <th>Branch</th>
+
                 </tr>
             </thead>
 
@@ -94,10 +96,12 @@ if (isset($_GET['search'])) {
     $search_id = mysqli_real_escape_string($conn, $_GET['search']);
 
     // Construct SQL query
-    $sql = "SELECT * FROM students WHERE id = '$search_id'";
+    // $sql = "SELECT * FROM students WHERE ";
+    $sql = "SELECT * FROM students, studentaccount where students.Id=studentaccount.ID && students.Id = '$search_id'";
+
 } else {
     // Construct SQL query
-    $sql = "SELECT * FROM students";
+    $sql = "SELECT * FROM students, studentaccount where students.Id=studentaccount.ID ORDER BY students.f_name ASC";
 }
 
 // Execute SQL query
@@ -121,6 +125,9 @@ if ($result->num_rows > 0) {
         echo '<td>' . $row['Id'] . '</td>';
         echo '<td>' . $row['f_name'] . '</td>';
         echo '<td>' . $row['l_name'] . '</td>';
+        echo '<td>' . $row['UID'] . '</td>';
+        echo '<td>' . $row['branch'] . '</td>';
+
         echo '</tr>';
     }
     echo '</table>';

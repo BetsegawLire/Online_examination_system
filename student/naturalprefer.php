@@ -44,7 +44,7 @@ $choice_5 = $_POST['choice_5'];
 
 
   </head>
-  <body>
+  <body style="margin-top: 100px;">
 
 
     <div class="container my-5 border">

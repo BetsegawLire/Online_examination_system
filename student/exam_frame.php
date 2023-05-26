@@ -91,10 +91,27 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
 });
 	}
 </script>
+<?php
+
+
+// Query the database to get the exam start and end times
+$sql = "SELECT start_time, end_time FROM exam WHERE id = 2"; // Replace 1 with the actual exam ID
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$start_time = strtotime($row['start_time']);
+$end_time = strtotime($row['end_time']);
+
+// Calculate the remaining time in seconds
+$remaining_time = $end_time - time();
+?>
+
 <form  method="POST" enctype="multipart/form-data">
 
             <div id="page-wrapper">
                 <div class="container-fluid">
+				<h1>
+				<h3 id="countdown"></h3>
+				</h1>
                     <div class="row">
                         <div class="col-lg-12">
                            
@@ -102,6 +119,9 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
                         
                     
                     </div>
+					<!-- <div id="countdown"> -->
+					
+				<!-- </div> -->
                     <!-- /.row -->
                     <div class="row">
                         <div class="col-lg-12">
@@ -115,12 +135,16 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
 
                                                    <div class="row">
 
+												   
+
+
 
 				<h4>
 				
 					Q.<?php echo $_SESSION['current_que']; echo '  '; echo $_SESSION['qa'][$_SESSION['current_que']]['question'];?>
 
 				</h4>
+				
 			</div>
 
 			<div class="form-group" id="checkbox_div">
@@ -188,6 +212,25 @@ if(!isset($_SESSION['current_que']) || empty($_SESSION['current_que'])){
 </div>
 
 <link rel="stylesheet" type="text/css" href="css/timeTo.css">
+<script>
+function countdown(remaining_time) {
+	var hours = Math.floor(remaining_time / 3600);
+  var minutes = Math.floor((remaining_time - (hours * 3600)) / 60);
+  var remainingSeconds = remaining_time - (hours * 3600) - (minutes * 60);
+    // var minutes = Math.floor(remaining_time / 60);
+    // var seconds = remaining_time % 60;
+    document.getElementById("countdown").innerHTML = hours + "hr " + minutes + "m " + remainingSeconds + "s";
+    remaining_time--;
+    if (remaining_time >= 0) {
+        setTimeout(function() {
+            countdown(remaining_time);
+        }, 1000);
+    } else {
+        alert("Time's up!");
+    }
+}
+countdown(<?php echo $remaining_time; ?>);
+</script>
 
 <script src="js/jquery.min.js"></script>
 

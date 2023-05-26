@@ -65,7 +65,9 @@ if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
 
 <body>
 
-	
+
+
+
 
 	<iframe id="exam_frame" width="100%" height="450" frameborder="0" scrolling="no" src="exam_frame.php"></iframe>
 
@@ -104,4 +106,4 @@ if(!isset($_SESSION['qa']) || empty($_SESSION['qa'])){
         
         <script src="js/startmin.js"></script>
 
-	<li><a href="result_count.php" id="endExamBtn"> <i class="fa fa-sign-out fa-fw"></i> submit-Exam</a></li>     
+	<li><a href="result_count.php" id="endExamBtn" class="btn btn-primary">submit-Exam</a></li>     

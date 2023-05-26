@@ -122,7 +122,7 @@ if ($result->num_rows > 0) {
   </div>
   <div>
     <label >CGPA</label>
-    <input type="number" class="form-control" name="cgpa" placeholder="Enter cgpa">
+    <input type="float" class="form-control" name="cgpa" placeholder="Enter cgpa">
     
   </div>
   <div>

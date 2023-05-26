@@ -43,7 +43,7 @@ if(!isset($_SESSION['end_time'])){
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"> 
     </head>
-    <body>
+    <body style="margin-top: 100px">
 
 <div class="container">
 
@@ -81,7 +81,7 @@ if(!isset($_SESSION['end_time'])){
                      
 
                         <div class="form-group mb-3">
-                         <a href="../page student.php" name="submit" >back to homepage</a>
+                         <a href="../page student.php" class="btn btn-primary" name="submit" >back to homepage</a>
                          
                          
                        

@@ -1,14 +1,8 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="style.css">
-  <!-- <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="../new.css"> -->
+    <head>
+    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -26,10 +20,10 @@
    
 <a class="nav-link" style="color: white;" href="login.php">Login</a></li>
         <!-- </li> -->
-        <!-- <li class="nav-item">
-        <a href="" class="nav-link" style="color: white;">Home</a>
+        <li class="nav-item">
+        <a href="index.php" class="nav-link" style="color: white;">Home</a>
 
-        </li> -->
+        </li>
         <!-- <li class="nav-item">
         <a href="" class="nav-link" style="color: white;">News</a>
 
@@ -38,46 +32,60 @@
         <a href="contact_us.php" class="nav-link" style="color: white;">Contact Us</a>
 
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
         <a href="about_us.php" class="nav-link" style="color: white;">About Us</a>
 
-        </li>
+        </li> -->
         
         
       </ul>
     </div>
   </div>
 </nav>
+     <!-- section a: info -->
+     <section id="about-a" class="text-center py-3" style="margin-top:100px;">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="bottom-line"></div>
+        <p class="lead">
+          Here is the description about who we are.
+        </p>
+        <div class="about-info">
+          <img src="./images/dave.jpg" alt="" class="bio-image w-100 h-100" />
+          <div class="bio bg-light">
+            <h4>Who is Dave</h4>
+            <p class="m-auto text-center">
+              I am a web and mobile app developer with extensive experience in both frontend and backend development. I have worked on numerous websites, utilizing my skills in HTML, CSS, and JavaScript, as well as my expertise in Angular, PHP, and Node.js. In mobile app development, I specialize in using Flutter to create high-quality, user-friendly apps. Some of my notable projects include developing a custom e-commerce platform for a client, creating a responsive web application for a healthcare provider, and building a mobile app for a local restaurant. I am always looking for new challenges to tackle.
+            </p>
+          </div>
+          
+        </div>
 
+        <div class="about-info">
+          <img src="./images/abel.jpg" alt="" class="bio-image w-100 h-100" />
+          <div class="bio bg-light">
+            <h4>Who is Abel</h4>
+            <p class="m-auto text-center">
+              I am a web and mobile app developer with extensive experience in both frontend and backend development. I have worked on numerous websites, utilizing my skills in HTML, CSS, and JavaScript, as well as my expertise in Angular, PHP, and Node.js. In mobile app development, I specialize in using Flutter to create high-quality, user-friendly apps. Some of my notable projects include developing a custom e-commerce platform for a client, creating a responsive web application for a healthcare provider, and building a mobile app for a local restaurant. I am always looking for new challenges to tackle.
+            </p>
+          </div>
+          
+        </div>
 
-      <!-- Navbar -->
-
-      <!-- body start -->
-      <div style="" id="header-home">
-
-      <div class="container m-auto h-100">
-        
-        <div class="header-content m-auto text-center mt-5 h-100" style="margin-top: 100px;">
-          <h1>
-            Welcome To Our Online Examination Used By: 
-            <span
-              class="txt-type"
-              data-wait="2000"
-              data-words='["Students", "System-Admin", "Registral", "Committes", "Committe-Admin", "Freshman-Directorate"]'
-            ></span>
-          </h1>
-          <p class="lead">
-            Please try to login or signup.
-          </p>
-          <a href="login.php" class="btn btn-dark">LogIn</a>
+        <div class="about-info">
+          <img src="./images/halif.jpg" alt="" class="bio-image w-100 h-100" />
+          <div class="bio bg-light">
+            <h4>Who is Halif</h4>
+            <p class="m-auto text-center">
+              I am a web and mobile app developer with extensive experience in both frontend and backend development. I have worked on numerous websites, utilizing my skills in HTML, CSS, and JavaScript, as well as my expertise in Angular, PHP, and Node.js. In mobile app development, I specialize in using Flutter to create high-quality, user-friendly apps. Some of my notable projects include developing a custom e-commerce platform for a client, creating a responsive web application for a healthcare provider, and building a mobile app for a local restaurant. I am always looking for new challenges to tackle.
+            </p>
+          </div>
+          
         </div>
       </div>
-      </div>
-      <!-- body end -->
-
-
-      <!-- footer start -->
-      <div class="bg-dark">
+    </section>
+     <!-- footer start -->
+     <div class="bg-dark">
     <div class="row row-cols-lg-3 p-5 mx-auto" style="width: 80%; border-bottom: 1px white solid;" >
       <div class="col text-center">
         <img src="hulogoo.png" class="mb-4" width="100" height="100" alt="">
@@ -157,7 +165,5 @@
     <h4 class="text-light p-3 text-center">&copy; 2023 All Rights Reserved | Haramaya University</h4>
   </div>
       <!-- footer end -->
-    <script src="js/typewriter.js"></script>
-
 </body>
 </html>

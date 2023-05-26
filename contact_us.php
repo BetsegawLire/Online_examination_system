@@ -1,17 +1,12 @@
 <html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+    <head>
   <link rel="stylesheet" href="style.css">
-  <!-- <link rel="stylesheet" href="../bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" href="../new.css"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Latest compiled JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <body>
+        <!-- navabar start -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
     <img src="hulogoo.png" width="50" height="60" alt="">
@@ -26,18 +21,18 @@
    
 <a class="nav-link" style="color: white;" href="login.php">Login</a></li>
         <!-- </li> -->
-        <!-- <li class="nav-item">
-        <a href="" class="nav-link" style="color: white;">Home</a>
+        <li class="nav-item">
+        <a href="index.php" class="nav-link" style="color: white;">Home</a>
 
-        </li> -->
+        </li>
         <!-- <li class="nav-item">
         <a href="" class="nav-link" style="color: white;">News</a>
 
         </li> -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
         <a href="contact_us.php" class="nav-link" style="color: white;">Contact Us</a>
 
-        </li>
+        </li> -->
         <li class="nav-item">
         <a href="about_us.php" class="nav-link" style="color: white;">About Us</a>
 
@@ -48,36 +43,54 @@
     </div>
   </div>
 </nav>
-
-
-      <!-- Navbar -->
-
-      <!-- body start -->
-      <div style="" id="header-home">
-
-      <div class="container m-auto h-100">
-        
-        <div class="header-content m-auto text-center mt-5 h-100" style="margin-top: 100px;">
-          <h1>
-            Welcome To Our Online Examination Used By: 
-            <span
-              class="txt-type"
-              data-wait="2000"
-              data-words='["Students", "System-Admin", "Registral", "Committes", "Committe-Admin", "Freshman-Directorate"]'
-            ></span>
-          </h1>
-          <p class="lead">
-            Please try to login or signup.
-          </p>
-          <a href="login.php" class="btn btn-dark">LogIn</a>
+        <!-- navbar end -->
+         <!-- section a: conact form -->
+    <section id="contact-a" class="text-center py-3" style="margin-top: 100px;">
+        <div class="container">
+            <h2 class="section-titl">Contact Us</h2>
+            <div class="bottom-lin"></div>
+            <p class="lead">Here is how you can reach Us</p>
+            <form action="">
+                <div class="text-fields">
+                    <input type="text" class="text-input name-input" placeholder="Name">
+                    <input type="text" class="text-input subject-input" placeholder="Subject">
+                    <input type="email" class="text-input email-input" placeholder="Email Address">
+                    <input type="text" class="text-input phone-input" placeholder="Phone Number">
+                    <textarea class="text-input message-input" placeholder="Enter Message"></textarea>
+                </div>
+                <button class="btn-dark" type="submit">Submit</button>
+            </form>
         </div>
-      </div>
-      </div>
-      <!-- body end -->
+    </section>
+  
+    <!-- section b: conatct-info -->
+    <section id="contact-b" class="py-b bg-dark text-light">
+        <div class="container">
+            <div class="contact-info">
+                <div>
+                    <i class="fas fa-envelope fa-2x"></i>
+                    <h3>Email</h3>
+                    <p>          info@haramaya.com
+</p>
+                </div>
+                <div>
+                    <i class="fas fa-phone fa-2x"></i>
+                    <h3>Phone</h3>
+                    <p>
+          +251 9________
+                    </p>
+                </div>
+                <div>
+                    <i class="fas fa-address-card fa-2x"></i>
+                    <h3>Address</h3>
+                    <p>Haramaya University</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-      <!-- footer start -->
-      <div class="bg-dark">
+     <!-- footer start -->
+     <div class="bg-dark">
     <div class="row row-cols-lg-3 p-5 mx-auto" style="width: 80%; border-bottom: 1px white solid;" >
       <div class="col text-center">
         <img src="hulogoo.png" class="mb-4" width="100" height="100" alt="">
@@ -157,7 +170,5 @@
     <h4 class="text-light p-3 text-center">&copy; 2023 All Rights Reserved | Haramaya University</h4>
   </div>
       <!-- footer end -->
-    <script src="js/typewriter.js"></script>
-
 </body>
 </html>
