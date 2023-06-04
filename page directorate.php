@@ -50,6 +50,9 @@ if(!isset($_SESSION["loggedindirectorate"]) || $_SESSION["loggedindirectorate"] 
         <a  href="directorate/place.php" class="nav-link" style="color: white;">place</a> 
         </li>
         <li class="nav-item">
+        <a  href="directorate/report.php" class="nav-link" style="color: white;">Report</a> 
+        </li>
+        <li class="nav-item">
         <a href="p_directorate.php" class="nav-link" style="color: white;"> Change password</a>
         </li>
         <li class="nav-item">

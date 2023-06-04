@@ -95,6 +95,9 @@ body {
         <a  href="place.php" class="nav-link" style="color: white;">place</a> 
         </li>
         <li class="nav-item">
+        <a  href="report.php" class="nav-link" style="color: white;">Report</a> 
+        </li>
+        <li class="nav-item">
         <a href="../p_directorate.php" class="nav-link" style="color: white;"> Change password</a>
         </li>
         <li class="nav-item">

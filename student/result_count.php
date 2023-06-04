@@ -118,7 +118,9 @@ unset($_SESSION['current_que']);
 						<span class="lbl">Right Answers : </span> 
 						<span class="data"><?php echo "$right_ans"; ?></span>
 					</div>
+					<a href="../page student.php" class='btn btn-primary' name="submit" >back to homepage</a>
 				</div>
+
 			
 		</body>
 		</html>

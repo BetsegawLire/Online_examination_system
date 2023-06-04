@@ -23,16 +23,35 @@ if(isset($_POST['btn']))
     $year=$_POST['year'];
     $uee=$_POST['uee'];
     $cgpa=$_POST['cgpa'];
-    $coc=$_POST['coc'];
-    $total=$_POST['total'];
+    // $coc=$_POST['coc'];
+    // $total=$_POST['total'];
+
+    $cgpa = $_POST['cgpa']; // assuming the CGPA value is submitted via a form
+
+// Validate CGPA input
+if (filter_var($cgpa, FILTER_VALIDATE_FLOAT) === false) {
+  // CGPA input is not a valid float
+  // echo "Error: CGPA must be a valid number.";
+  ?>
+  
+  <script>
+        alert('Error: CGPA must be a valid number.!');
+        // window.location='student.php';
+      </script>
+      <?php
+} else {
+  // CGPA input is valid
+  // Proceed with inserting the student information into the database
+
+
 
 
     // $password=md5($_POST['password']);  
     
 
   
-  $sql="insert into students( f_name, l_name, sex, region, branch, year, UEE, CGPA, COC, total)
-    values('$f_name','$l_name','$sex', '$region', '$branch', $year, $uee, $cgpa, $coc, $total)";
+  $sql="insert into students( f_name, l_name, sex, region, branch, year, UEE, CGPA)
+    values('$f_name','$l_name','$sex', '$region', '$branch', $year, $uee, $cgpa)";
   if($conn->query($sql)==TRUE)
   {   
     $sql = "select Id from students ORDER BY id DESC LIMIT 1;";
@@ -67,6 +86,7 @@ if ($result->num_rows > 0) {
  
 }
 }
+}
 
 ?>
  <html>
@@ -96,23 +116,56 @@ if ($result->num_rows > 0) {
     
   </div>
   <div>
-    <label >Sex</label>
-    <input type="text" class="form-control" name="sex" placeholder="Enter sex" required>
+    <!-- <label >Sex</label> -->
+    <!-- <input type="text" class="form-control" name="sex" placeholder="Enter sex" required> -->
+    <label for="sex">Sex:</label>
+  <select name="sex" id="sex" class="form-control" required>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+  </div>
+  <div>
+    <!-- <label >Region</label>
+    <input type="text" class="form-control" name="region" placeholder="Enter region" required> -->
+    <label for="region">Region:</label>
+  <select name="region" id="region" class="form-control" required>
+    <option value="Oromia">Oromia</option>
+    <option value="Amhara">Amhara</option>
+    <option value="Tigray">Tigray</option>
+    <option value="Afar">Afar</option>
+    <option value="Benishangul-Gumuz">Benishangul-Gumuz</option>
+    <option value="Gambela">Gambela</option>
+    <option value="Harari">Harari</option>
+    <option value="Somali">Somali</option>
+    <option value="SNNPR">SNNPR</option>
+    <option value="Sidama">Sidama</option>
+    <option value="South Western">South Western</option>
+
+  </select>
     
   </div>
   <div>
-    <label >Region</label>
-    <input type="text" class="form-control" name="region" placeholder="Enter region" required>
+  <label for="branch">Branch:</label>
+  <select name="branch" id="branch" class="form-control" required>
+    <option value="natural">Natural</option>
+    <option value="social">Social</option>
+    <!-- <option value="other">Other</option> -->
+  </select>
     
   </div>
   <div>
-    <label >Branch</label>
-    <input type="text" class="form-control" name="branch" placeholder="Enter branch" required>
-    
-  </div>
-  <div>
-    <label >Year</label>
-    <input type="number" class="form-control" name="year" placeholder="Enter year" required>
+    <!-- <label >Year</label>
+    <input type="number" class="form-control" name="year" placeholder="Enter year" required> -->
+    <label for="year">Year:</label>
+  <select name="year" id="year" class="form-control" required>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+
+  </select>
     
   </div>
   <div>
@@ -125,7 +178,7 @@ if ($result->num_rows > 0) {
     <input type="float" class="form-control" name="cgpa" placeholder="Enter cgpa">
     
   </div>
-  <div>
+  <!-- <div>
     <label >COC</label>
     <input type="number" class="form-control" name="coc" placeholder="Enter coc">
     
@@ -134,7 +187,7 @@ if ($result->num_rows > 0) {
     <label >Total</label>
     <input type="number" class="form-control" name="total" placeholder="Enter total">
     
-  </div>
+  </div> -->
   
   <button type="submit" class="btn btn-primary" name="btn">Submit</button>
 </form>
