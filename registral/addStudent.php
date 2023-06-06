@@ -16,7 +16,27 @@ if(isset($_POST['btn']))
 
     // $faculty=$_POST['faculty'];
     $f_name=$_POST['f_name'];
-    $l_name=$_POST['l_name'];
+    if (!preg_match("/^[a-zA-Z]+$/", $f_name)) {
+      // if the username contains anything other than letters, display an error message
+      ?><script>
+      alert('Error: Firstname can only contain letters.');
+      // window.location='student.php';
+    </script>
+    <?php
+      // echo "Error: Username can only contain letters.";
+    } else {
+      // if the username is valid, continue with the rest of your code
+      // ...
+      $l_name=$_POST['l_name'];
+      if (!preg_match("/^[a-zA-Z]+$/", $l_name)) {
+        // if the username contains anything other than letters, display an error message
+        ?><script>
+        alert('Error: Lastname can only contain letters.');
+        // window.location='student.php';
+      </script>
+      <?php
+        // echo "Error: Username can only contain letters.";
+      } else {
     $sex=$_POST['sex'];
     $region=$_POST['region'];
     $branch=$_POST['branch'];
@@ -87,7 +107,8 @@ if ($result->num_rows > 0) {
 }
 }
 }
-
+}
+}
 ?>
  <html>
  <head>

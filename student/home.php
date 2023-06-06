@@ -27,9 +27,9 @@ if($conn === false){
     die("ERROR: Could not connect. " . $conn->connect_error);
 }
 
-$sql="select count(id) as id1 from studentacc where status='yes'";
-$result=$conn->query($sql);
-   $row=$result->fetch_assoc();
+// $sql="select count(id) as id1 from studentacc where status='yes'";
+// $result=$conn->query($sql);
+//    $row=$result->fetch_assoc();
   
 ?>
 
