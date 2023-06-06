@@ -17,7 +17,43 @@ if(!isset($_SESSION["loggedinadmin"]) || $_SESSION["loggedinadmin"] !== true){
    <!-- <link rel="stylesheet" href="style.css"> -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  .background-image {
+background-image: url("./images/Teaching.png");
+background-size: cover;
+background-position: center;
+height: 500px;
+}
 
+.content {
+background-color: #fff;
+padding: 50px;
+margin-top: -100px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+font-size: 36px;
+margin-bottom: 20px}
+
+.manage-accounts-button {
+background-color: #007bff;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+margin-bottom: 20px;
+cursor: pointer;
+}
+
+p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -102,7 +138,32 @@ if(!isset($_SESSION["loggedinadmin"]) || $_SESSION["loggedinadmin"] !== true){
 
   <!-- body start -->
   <div style="height:100vh">
+  <div class="container">
+<div class="background-image"></div>
+<div class="content">
+<h1>Welcome to the Admin Portal</h1>
+<!-- <button class="manage-accounts-button">Manage Accounts</button> -->
 
+<p>As an admin, you have the ability to manage the accounts of students, exam committee admins, registrals, and freshman directorate. With just a few clicks, you can add, edit, or delete user accounts as needed.</p>
+<!-- <button class="manage-accounts-button">Manage Accounts</button> -->
+<div class="dropdown">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+    Manage Accounts
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="admin/student.php">for students</a></li>
+    <li><a class="dropdown-item" href="admin/committeAdmin.php">for exam committee admin</a></li>
+    <li><a class="dropdown-item" href="admin/registral.php">for Registral</a></li>
+    <li><a class="dropdown-item" href="admin/freshman.php">for freshman</a></li>
+
+
+
+  </ul>
+</div>
+<p>Simply click the "Manage Accounts" button above to get started. You'll be prompted to select the type of user account you want to manage, and then you can view, edit, or delete the accounts as needed.</p>
+<p>Thank you for your hard work and dedication to our online student examination system. If you have any questions or concerns, please don't hesitate to contact us.</p>
+</div>
+</div>
 </div>
 <!-- body end -->
 

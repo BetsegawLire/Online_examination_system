@@ -158,19 +158,14 @@ if ($result->num_rows > 0) {
     <!-- <label >Year</label>
     <input type="number" class="form-control" name="year" placeholder="Enter year" required> -->
     <label for="year">Year:</label>
-  <select name="year" id="year" class="form-control" required>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
+  
+  <input type="number" class="form-control" id="year" name="year" placeholder="Enter uee" required>
 
-  </select>
     
   </div>
   <div>
     <label >UEE</label>
-    <input type="number" class="form-control" name="uee" placeholder="Enter uee" required>
+    <input type="number" class="form-control" name="uee" placeholder="Enter year" required>
     
   </div>
   <div>

@@ -17,7 +17,43 @@ if(!isset($_SESSION["loggedinregistral"]) || $_SESSION["loggedinregistral"] !== 
    <!-- <link rel="stylesheet" href="style.css"> -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  .background-image {
+background-image: url("./images/Teaching.png");
+background-size: cover;
+background-position: center;
+height: 500px;
+}
 
+.content {
+background-color: #fff;
+padding: 50px;
+margin-top: -100px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+font-size: 36px;
+margin-bottom: 20px}
+
+.add-student-button {
+background-color: #007bff;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+/* margin-bottom: 20px; */
+cursor: pointer;
+}
+
+p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -77,6 +113,21 @@ if(!isset($_SESSION["loggedinregistral"]) || $_SESSION["loggedinregistral"] !== 
 
 <!-- body start -->
 <div style="height:100vh">
+
+<div class="container">
+<div class="background-image"></div>
+<div class="content">
+<h1>Welcome to the Registral Portal</h1>
+<!-- <button class="add-student-button">Add Student</button> -->
+<p>As a registral, you play a crucial role in the success of our online student examination system. With just a few clicks, you can add new students to the system and ensure that they are ready to take their exams.</p>
+<!-- <button class="add-student-button" href="registral/student.php">Add Student</button> -->
+<a  href="registral/student.php" class="add-student-button my-5" style="color: white; decoration: none;">Add students</a>
+<!-- <button class="btn btn-primary my-5"><a href="addStudent.php" class="text-light">add Student</a></button> -->
+
+<p>Simply click the "Add Student" button above to get started. You'll be prompted to enter the student's information, including their name, email address, and course details. Once you've entered the information, click "Submit" and the student will be added to the system.</p>
+<p>Thank you for your hard work and dedication to our online student examination system. If you have any questions or concerns, please don't hesitate to contact us.</p>
+</div>
+</div>
 
 </div>
 <!-- body end -->

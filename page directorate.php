@@ -20,7 +20,43 @@ if(!isset($_SESSION["loggedindirectorate"]) || $_SESSION["loggedindirectorate"] 
    <!-- <link rel="stylesheet" href="style.css"> -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+  .background-image {
+background-image: url("./images/Teaching.png");
+background-size: cover;
+background-position: center;
+height: 500px;
+}
 
+.content {
+background-color: #fff;
+padding: 50px;
+margin-top: -100px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+font-size: 36px;
+margin-bottom: 20px}
+
+.manage-accounts-button {
+background-color: #007bff;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+font-size: 18px;
+margin-bottom: 20px;
+cursor: pointer;
+}
+
+p {
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+  </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -100,7 +136,27 @@ if(!isset($_SESSION["loggedindirectorate"]) || $_SESSION["loggedindirectorate"] 
  
 <!-- body start -->
 <div style="height:100vh">
+<div class="container">
+<div class="background-image"></div>
+<div class="content">
+<h1>Welcome to the Freshman Directorate Portal</h1>
+<!-- <button class="manage-accounts-button">Manage Accounts</button> -->
 
+<p>As a Freshman Directorate, you have the ability to post news, schedule exam time, place students and generate report With just a few clicks.</p>
+<!-- <button class="manage-accounts-button">Manage Accounts</button> -->
+<a  href="directorate/uploadnews.php" class="manage-accounts-button" > News</a>
+<a  href="directorate/managexam.php" class="manage-accounts-button"> Exam</a>
+<a  href="directorate/place.php" class="manage-accounts-button" > Place</a> 
+<a  href="directorate/report.php" class="manage-accounts-button" > Report</a> 
+
+<p>Simply click the "News" button above to get started. You'll be prompted to to try and submit the news.</p>
+<p>Simply click the "Exam" button above to get started. You'll be able to view the schedule of the exam.</p>
+<p>Simply click the "Place" button above to get started. You'll be prompted to place students.</p>
+<p>Simply click the "Report" button above to get started. You'll be able to view the report of students placement.</p>
+
+<p>Thank you for your hard work and dedication to our online student examination system. If you have any questions or concerns, please don't hesitate to contact us.</p>
+</div>
+</div>
 </div>
 <!-- body end -->
 

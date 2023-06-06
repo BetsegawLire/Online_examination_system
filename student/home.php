@@ -64,22 +64,22 @@ $result=$conn->query($sql);
         <!-- <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
 
 
-<html >
+<html>
 <body>
-  <div style="margin-bottom:200px;">
+  <!-- <div style="margin-top:200px;"> -->
   <?php
 // Connect to database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "final";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "final";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+// if (!$conn) {
+//   die("Connection failed: " . mysqli_connect_error());
+// }
 
 // Retrieve news details from database
 $sql = "SELECT * FROM news";
@@ -94,38 +94,38 @@ while ($row = mysqli_fetch_assoc($result)) {
 }
 
 // Close the database connection
-mysqli_close($conn);
+// mysqli_close($conn);
 ?>
-  </div>
+  <!-- </div> -->
    
 
 
    
    
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/jquery.min.js"></script> -->
 
         
-        <script src="js/bootstrap.min.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
         
         
-        <script src="js/metisMenu.min.js"></script>
+        <!-- <script src="js/metisMenu.min.js"></script> -->
         
         
-        <script src="js/dataTables/jquery.dataTables.min.js"></script>
-        <script src="js/dataTables/dataTables.bootstrap.min.js"></script>
+        <!-- <script src="js/dataTables/jquery.dataTables.min.js"></script> -->
+        <!-- <script src="js/dataTables/dataTables.bootstrap.min.js"></script> -->
 
         
-        <script src="js/startmin.js"></script>
-        <script src="js/jquery.min.js"></script>
+        <!-- <script src="js/startmin.js"></script> -->
+        <!-- <script src="js/jquery.min.js"></script> -->
         
         
-        <script src="js/bootstrap.min.js"></script>
+        <!-- <script src="js/bootstrap.min.js"></script> -->
 
         
-        <script src="js/metisMenu.min.js"></script>
+        <!-- <script src="js/metisMenu.min.js"></script> -->
         
         
-        <script src="js/startmin.js"></script>
+        <!-- <script src="js/startmin.js"></script> -->
         
 
         
